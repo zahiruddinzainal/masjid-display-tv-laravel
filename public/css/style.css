@@ -1,0 +1,350 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    list-style-type: none;
+    text-decoration: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    color: #252a32;
+    background: #f1f5f8;
+}
+a, button {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    text-decoration: none;
+}
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 80rem;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.brand {
+    font-family: inherit;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: inherit;
+    color: #148cb8;
+    text-transform: uppercase;
+}
+.header {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    z-index: 999;
+    color: #252a32;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.24);
+}
+.header .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+.header .navbar .burger {
+    position: fixed;
+    top: 1.75rem;
+    left: 2rem;
+    z-index: 9;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    transition: left 0.5s cubic-bezier(0.6, 0.05, 0.28, 0.91);
+}
+.header .navbar .burger-close {
+    display: none;
+}
+.header .navbar .burger.active {
+    left: 14rem;
+}
+.header .navbar .burger.active .burger-open {
+    display: none;
+}
+.header .navbar .burger.active .burger-close {
+    display: block;
+}
+.header .navbar .menu {
+    position: fixed;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 8;
+    opacity: 0;
+    top: 0rem;
+    left: -17rem;
+    width: 17rem;
+    height: 100%;
+    color: #252a32;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.24);
+    transition: all 0.5s cubic-bezier(0.6, 0.05, 0.28, 0.91);
+}
+.header .navbar .menu-item {
+    width: 100%;
+    padding: 1rem 2rem;
+    border: none;
+    outline: none;
+    transition: all 0.5s ease;
+}
+.header .navbar .menu-item a {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: inherit;
+    color: #252a32;
+    text-transform: uppercase;
+}
+.header .navbar .menu-item:hover {
+    padding: 1rem 3rem;
+    background: #148cb8;
+}
+.header .navbar .menu-item:hover a {
+    color: #fff;
+}
+.header .navbar .menu.active {
+    left: 0;
+    opacity: 1;
+}
+.main .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+/* ------------------------------- TABLE ------------------------------ */
+
+
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+  }
+  
+  table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+  }
+  
+  table th,
+  table td {
+    padding: .625em;
+    text-align: center;
+  }
+  
+  table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  
+  @media screen and (max-width: 600px) {
+    table {
+      border: 0;
+    }
+  
+    table caption {
+      font-size: 1.3em;
+    }
+    
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: .625em;
+    }
+    
+    table td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+    }
+    
+    table td::before {
+      /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    table td:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  /* ------------------------------- CARD ---------------------------- */
+
+  
+.card {
+  width: 400px;
+  margin: 75px auto 0;
+  background-color: #fff;
+  box-shadow: 0 3px 30px rgba(0, 0, 0, .14);
+  color: #444;
+  text-align: center;
+  font-size: 16px;
+}
+
+.card .card-header {
+  position: relative;
+  height: 48px;
+}
+
+.card .card-header .profile-img {
+  width: 96px;
+  height: 96px;
+  border-radius: 1000px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 6px solid #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+
+.card .card-body {
+  padding: 10px 40px;
+}
+
+.card .card-body .full-name {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 10px 0 0;
+}
+
+.card .card-body .username {
+  font-size: 13px;
+  color: #777;
+  margin: 5px 0 0;
+}
+
+.card .card-body .city {
+  font-weight: 500;
+  margin: 10px 0 0;
+}
+
+.card .card-body .desc {
+  line-height: 24px;
+}
+
+.card .social-icon {
+  font-size: 18px;
+  margin: 0 7px;
+}
+
+.card .social-icon.facebook {
+  color: #3b5999;
+}
+
+.card .social-icon.twitter {
+  color: #55acee;
+}
+
+.card .social-icon.tumblr {
+  color: #34465d;
+}
+
+.card .social-icon.youtube {
+  color: #cd201f;
+}
+
+.card .social-icon.linkedin {
+  color: #0077b5;
+}
+
+.card .social-icon.google-plus {
+  color: #dd4b39;
+}
+
+.card .card-footer {
+  display: table;
+  width: 100%;
+  border-top: 1px solid #e6e6e6;
+}
+
+.card .card-footer .col {
+  display: table-cell;
+  padding: 5px 10px;
+  font-size: 15px;
+}
+
+.card .card-footer .count {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.vr {
+  border-right: 1px solid #e6e6e6;
+}
+
+@media screen and (max-width: 575px) {
+  .card {
+      width: 96%;
+  }
+
+  .card .card-body {
+      padding: 10px 20px;
+  }
+
+  .card .card-footer .col {
+      padding: 0 10px;
+  }
+
+  .card .card-footer .count {
+      display: block;
+      margin-bottom: 5px;
+  }
+}
